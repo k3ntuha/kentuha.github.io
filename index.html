@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilya SVH - Социальные сети</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 48px;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-name {
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 18px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .social-link:hover::before {
+            left: 100%;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            margin-right: 20px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .telegram { background: linear-gradient(45deg, #0088cc, #00a8e6); }
+        .tiktok { background: linear-gradient(45deg, #ff0050, #ff4081); }
+        .bot { background: linear-gradient(45deg, #9c27b0, #e91e63); }
+
+        .link-content {
+            flex: 1;
+        }
+
+        .link-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .link-description {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .link-arrow {
+            font-size: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover .link-arrow {
+            transform: translateX(5px);
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+                margin: 10px;
+            }
+
+            .profile-name {
+                font-size: 28px;
+            }
+
+            .social-link {
+                padding: 15px 20px;
+            }
+
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                margin-right: 15px;
+                font-size: 20px;
+            }
+
+            .link-title {
+                font-size: 16px;
+            }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="profile-avatar pulse">IS</div>
+            <h1 class="profile-name">Ilya SVH</h1>
+            <p class="profile-subtitle">Игровой контент • Донат-сервисы • Обучение</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://t.me/ilya_svh" target="_blank" class="social-link">
+                <div class="social-icon telegram">📱</div>
+                <div class="link-content">
+                    <div class="link-title">Личный Telegram</div>
+                    <div class="link-description">Прямая связь и персональные обновления</div>
+                </div>
+                <div class="link-arrow">→</div>
+            </a>
+
+            <a href="https://t.me/dev_kentuha" target="_blank" class="social-link">
+                <div class="social-icon telegram">🎮</div>
+                <div class="link-content">
+                    <div class="link-title">Игровой контент</div>
+                    <div class="link-description">Канал с игровыми материалами и разработкой</div>
+                </div>
+                <div class="link-arrow">→</div>
+            </a>
+
+            <a href="https://t.me/training_donate" target="_blank" class="social-link">
+                <div class="social-icon telegram">💰</div>
+                <div class="link-content">
+                    <div class="link-title">Донат-сервис</div>
+                    <div class="link-description">Обучение работе с донатами и монетизацией</div>
+                </div>
+                <div class="link-arrow">→</div>
+            </a>
+
+            <a href="https://t.me/kentuha1_bot" target="_blank" class="social-link">
+                <div class="social-icon bot">🤖</div>
+                <div class="link-content">
+                    <div class="link-title">Telegram Bot</div>
+                    <div class="link-description">Быстрая связь через автоматизированного бота</div>
+                </div>
+                <div class="link-arrow">→</div>
+            </a>
+
+            <a href="https://tiktok.com/@trainingsandbox_moment" target="_blank" class="social-link">
+                <div class="social-icon tiktok">🎵</div>
+                <div class="link-content">
+                    <div class="link-title">TikTok</div>
+                    <div class="link-description">Короткие видео и обучающие моменты</div>
+                </div>
+                <div class="link-arrow">→</div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Добавляем интерактивность и анимации
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.social-link');
+            
+            // Добавляем эффект наведения
+            links.forEach(link => {
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.02)';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+
+            // Анимация появления элементов
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    }
+                });
+            });
+
+            // Изначально скрываем ссылки для анимации
+            links.forEach((link, index) => {
+                link.style.opacity = '0';
+                link.style.transform = 'translateY(20px)';
+                link.style.transition = 'all 0.6s ease';
+                observer.observe(link);
+            });
+
+            // Показываем ссылки с задержкой
+            setTimeout(() => {
+                links.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.style.opacity = '1';
+                        link.style.transform = 'translateY(0)';
+                    }, index * 150);
+                });
+            }, 500);
+        });
+
+        // Добавляем эффект частиц на фон
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = '100%';
+            particle.style.zIndex = '-1';
+            
+            document.body.appendChild(particle);
+            
+            const animation = particle.animate([
+                { transform: 'translateY(0px)', opacity: 0 },
+                { transform: 'translateY(-100vh)', opacity: 1 },
+                { transform: 'translateY(-200vh)', opacity: 0 }
+            ], {
+                duration: Math.random() * 3000 + 2000,
+                easing: 'linear'
+            });
+            
+            animation.onfinish = () => particle.remove();
+        }
+
+        // Создаем частицы каждые 300ms
+        setInterval(createParticle, 300);
+    </script>
+</body>
+</html>
